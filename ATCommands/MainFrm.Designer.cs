@@ -206,6 +206,12 @@ namespace ATCommands
             this.TxtMsg = new DevExpress.XtraEditors.MemoEdit();
             this.USBserialPort = new System.IO.Ports.SerialPort(this.components);
             this.TmrSignal = new System.Windows.Forms.Timer(this.components);
+            this.gridColumn39 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn40 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn41 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn42 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn43 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.addMobile2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewGroups)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSettingUse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSave)).BeginInit();
@@ -439,35 +445,36 @@ namespace ATCommands
             this.toolStripMenuItemSelectAll,
             this.toolStripSeparator1,
             this.groupItToolStripMenuItem,
-            this.toolStripMenuItemAdd});
+            this.toolStripMenuItemAdd,
+            this.addMobile2ToolStripMenuItem});
             this.CMSdataschool.Name = "CMSdataschool";
             this.CMSdataschool.ShowImageMargin = false;
-            this.CMSdataschool.Size = new System.Drawing.Size(115, 76);
+            this.CMSdataschool.Size = new System.Drawing.Size(132, 120);
             this.CMSdataschool.Opening += new System.ComponentModel.CancelEventHandler(this.CMSdataschool_Opening);
             // 
             // toolStripMenuItemSelectAll
             // 
             this.toolStripMenuItemSelectAll.Name = "toolStripMenuItemSelectAll";
-            this.toolStripMenuItemSelectAll.Size = new System.Drawing.Size(114, 22);
+            this.toolStripMenuItemSelectAll.Size = new System.Drawing.Size(131, 22);
             this.toolStripMenuItemSelectAll.Text = "«Œ Ì«— «·ﬂ·";
             this.toolStripMenuItemSelectAll.Click += new System.EventHandler(this.toolStripMenuItemSelectAll_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(111, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(128, 6);
             // 
             // groupItToolStripMenuItem
             // 
             this.groupItToolStripMenuItem.Name = "groupItToolStripMenuItem";
-            this.groupItToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.groupItToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.groupItToolStripMenuItem.Text = "«÷«›… ·Ã—Ê»";
             this.groupItToolStripMenuItem.Click += new System.EventHandler(this.groupItToolStripMenuItem_Click);
             // 
             // toolStripMenuItemAdd
             // 
             this.toolStripMenuItemAdd.Name = "toolStripMenuItemAdd";
-            this.toolStripMenuItemAdd.Size = new System.Drawing.Size(114, 22);
+            this.toolStripMenuItemAdd.Size = new System.Drawing.Size(131, 22);
             this.toolStripMenuItemAdd.Text = "«÷«›…";
             this.toolStripMenuItemAdd.Click += new System.EventHandler(this.toolStripMenuItemAdd_Click);
             // 
@@ -1051,6 +1058,7 @@ namespace ATCommands
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn8,
+            this.gridColumn39,
             this.GCstu_Dayz,
             this.GCstu_BirthDay,
             this.GCstu_age,
@@ -1142,7 +1150,7 @@ namespace ATCommands
             this.GCstu_Dayz.Name = "GCstu_Dayz";
             this.GCstu_Dayz.OptionsColumn.ReadOnly = true;
             this.GCstu_Dayz.Visible = true;
-            this.GCstu_Dayz.VisibleIndex = 5;
+            this.GCstu_Dayz.VisibleIndex = 6;
             // 
             // GCstu_BirthDay
             // 
@@ -1155,7 +1163,7 @@ namespace ATCommands
             this.GCstu_BirthDay.FieldName = "BirthDay";
             this.GCstu_BirthDay.Name = "GCstu_BirthDay";
             this.GCstu_BirthDay.Visible = true;
-            this.GCstu_BirthDay.VisibleIndex = 6;
+            this.GCstu_BirthDay.VisibleIndex = 7;
             this.GCstu_BirthDay.Width = 96;
             // 
             // GCstu_age
@@ -1168,7 +1176,7 @@ namespace ATCommands
             this.GCstu_age.FieldName = "age";
             this.GCstu_age.Name = "GCstu_age";
             this.GCstu_age.Visible = true;
-            this.GCstu_age.VisibleIndex = 7;
+            this.GCstu_age.VisibleIndex = 8;
             this.GCstu_age.Width = 56;
             // 
             // GCstu_eyab_date_from
@@ -1182,7 +1190,7 @@ namespace ATCommands
             this.GCstu_eyab_date_from.FieldName = "eyab_date_from";
             this.GCstu_eyab_date_from.Name = "GCstu_eyab_date_from";
             this.GCstu_eyab_date_from.Visible = true;
-            this.GCstu_eyab_date_from.VisibleIndex = 8;
+            this.GCstu_eyab_date_from.VisibleIndex = 9;
             this.GCstu_eyab_date_from.Width = 79;
             // 
             // GCstu_codeCheckBox
@@ -1196,7 +1204,7 @@ namespace ATCommands
             this.GCstu_codeCheckBox.FieldName = "checked";
             this.GCstu_codeCheckBox.Name = "GCstu_codeCheckBox";
             this.GCstu_codeCheckBox.Visible = true;
-            this.GCstu_codeCheckBox.VisibleIndex = 9;
+            this.GCstu_codeCheckBox.VisibleIndex = 10;
             this.GCstu_codeCheckBox.Width = 77;
             // 
             // repositoryItemCheckEditstu_code
@@ -1216,6 +1224,7 @@ namespace ATCommands
             this.gridColumn12,
             this.gridColumn13,
             this.gridColumn16,
+            this.gridColumn40,
             this.gridColumn14,
             this.gridColumn11});
             this.gridViewDatanet.GridControl = this.gridControlMain;
@@ -1313,7 +1322,7 @@ namespace ATCommands
             this.gridColumn11.FieldName = "perm";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 6;
+            this.gridColumn11.VisibleIndex = 7;
             this.gridColumn11.Width = 59;
             // 
             // repositoryItemCheckEditperm
@@ -1331,6 +1340,7 @@ namespace ATCommands
             this.gridColumn21,
             this.gridColumn22,
             this.gridColumn23,
+            this.gridColumn41,
             this.gridColumn24});
             this.gridViewacc_sms.GridControl = this.gridControlMain;
             this.gridViewacc_sms.Name = "gridViewacc_sms";
@@ -1422,6 +1432,7 @@ namespace ATCommands
             this.gridColumn26,
             this.gridColumn27,
             this.gridColumn28,
+            this.gridColumn42,
             this.gridColumn29});
             this.gridViewmalafatSms.GridControl = this.gridControlMain;
             this.gridViewmalafatSms.Name = "gridViewmalafatSms";
@@ -1492,7 +1503,7 @@ namespace ATCommands
             this.gridColumn29.FieldName = "checked";
             this.gridColumn29.Name = "gridColumn29";
             this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 4;
+            this.gridColumn29.VisibleIndex = 5;
             this.gridColumn29.Width = 86;
             // 
             // gridViewQry
@@ -1503,47 +1514,73 @@ namespace ATCommands
             this.gridColumn32,
             this.gridColumn33,
             this.gridColumn34,
+            this.gridColumn43,
             this.gridColumn35,
             this.gridColumn36,
             this.gridColumn37,
             this.gridColumn38});
             this.gridViewQry.GridControl = this.gridControlMain;
             this.gridViewQry.Name = "gridViewQry";
+            this.gridViewQry.OptionsView.ColumnAutoWidth = false;
             // 
             // gridColumn30
             // 
+            this.gridColumn30.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn30.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn30.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn30.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn30.Caption = "«·’›";
             this.gridColumn30.FieldName = "alsofof_code_Name";
             this.gridColumn30.Name = "gridColumn30";
             this.gridColumn30.Visible = true;
             this.gridColumn30.VisibleIndex = 0;
+            this.gridColumn30.Width = 93;
             // 
             // gridColumn31
             // 
+            this.gridColumn31.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn31.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn31.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn31.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn31.Caption = "«·›’·";
             this.gridColumn31.FieldName = "fasl_code_Name";
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.Visible = true;
             this.gridColumn31.VisibleIndex = 1;
+            this.gridColumn31.Width = 94;
             // 
             // gridColumn32
             // 
+            this.gridColumn32.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn32.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn32.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn32.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn32.Caption = "«”„ «·ÿ«·»";
             this.gridColumn32.FieldName = "stu_name";
             this.gridColumn32.Name = "gridColumn32";
             this.gridColumn32.Visible = true;
             this.gridColumn32.VisibleIndex = 2;
+            this.gridColumn32.Width = 147;
             // 
             // gridColumn33
             // 
+            this.gridColumn33.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn33.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn33.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn33.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn33.Caption = "«”„ Ê·Ì «·«„—";
             this.gridColumn33.FieldName = "walealkmrname";
             this.gridColumn33.Name = "gridColumn33";
             this.gridColumn33.Visible = true;
             this.gridColumn33.VisibleIndex = 3;
+            this.gridColumn33.Width = 128;
             // 
             // gridColumn34
             // 
+            this.gridColumn34.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn34.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn34.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn34.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn34.Caption = "«·„Ê»Ì·";
             this.gridColumn34.FieldName = "waleaalkamr_mobile";
             this.gridColumn34.Name = "gridColumn34";
@@ -1552,35 +1589,51 @@ namespace ATCommands
             // 
             // gridColumn35
             // 
+            this.gridColumn35.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn35.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn35.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn35.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn35.Caption = "⁄œœ «Ì«„ «·€Ì«»";
             this.gridColumn35.FieldName = "Dayz";
             this.gridColumn35.Name = "gridColumn35";
             this.gridColumn35.Visible = true;
-            this.gridColumn35.VisibleIndex = 5;
+            this.gridColumn35.VisibleIndex = 6;
             // 
             // gridColumn36
             // 
+            this.gridColumn36.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn36.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn36.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn36.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn36.Caption = " «—ÌŒ «·„Ì·«œ";
             this.gridColumn36.FieldName = "BirthDay";
             this.gridColumn36.Name = "gridColumn36";
             this.gridColumn36.Visible = true;
-            this.gridColumn36.VisibleIndex = 6;
+            this.gridColumn36.VisibleIndex = 7;
             // 
             // gridColumn37
             // 
+            this.gridColumn37.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn37.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn37.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn37.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn37.Caption = "«·”‰";
             this.gridColumn37.FieldName = "age";
             this.gridColumn37.Name = "gridColumn37";
             this.gridColumn37.Visible = true;
-            this.gridColumn37.VisibleIndex = 7;
+            this.gridColumn37.VisibleIndex = 8;
             // 
             // gridColumn38
             // 
+            this.gridColumn38.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn38.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn38.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn38.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn38.Caption = " «—ÌŒ «·€Ì«»";
             this.gridColumn38.FieldName = "eyab_date_from";
             this.gridColumn38.Name = "gridColumn38";
             this.gridColumn38.Visible = true;
-            this.gridColumn38.VisibleIndex = 8;
+            this.gridColumn38.VisibleIndex = 9;
             // 
             // gridViewSetting
             // 
@@ -2195,6 +2248,74 @@ namespace ATCommands
             this.TmrSignal.Interval = 2000;
             this.TmrSignal.Tick += new System.EventHandler(this.TmrSignal_Tick);
             // 
+            // gridColumn39
+            // 
+            this.gridColumn39.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn39.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn39.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn39.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn39.Caption = "„Ê»Ì· «·«„";
+            this.gridColumn39.FieldName = "waleaalkamr_mobile2";
+            this.gridColumn39.Name = "gridColumn39";
+            this.gridColumn39.Visible = true;
+            this.gridColumn39.VisibleIndex = 5;
+            this.gridColumn39.Width = 80;
+            // 
+            // gridColumn40
+            // 
+            this.gridColumn40.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn40.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn40.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn40.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn40.Caption = "„Ê»Ì· «·«„";
+            this.gridColumn40.FieldName = "mobil2";
+            this.gridColumn40.Name = "gridColumn40";
+            this.gridColumn40.Visible = true;
+            this.gridColumn40.VisibleIndex = 6;
+            // 
+            // gridColumn41
+            // 
+            this.gridColumn41.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn41.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn41.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn41.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn41.Caption = "„Ê»Ì· «·«„";
+            this.gridColumn41.FieldName = "mobil2";
+            this.gridColumn41.Name = "gridColumn41";
+            this.gridColumn41.Visible = true;
+            this.gridColumn41.VisibleIndex = 6;
+            // 
+            // gridColumn42
+            // 
+            this.gridColumn42.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn42.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn42.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn42.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn42.Caption = "„Ê»Ì· «·«„";
+            this.gridColumn42.FieldName = "mobil2";
+            this.gridColumn42.Name = "gridColumn42";
+            this.gridColumn42.Visible = true;
+            this.gridColumn42.VisibleIndex = 4;
+            // 
+            // gridColumn43
+            // 
+            this.gridColumn43.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn43.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn43.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn43.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn43.Caption = "„Ê»Ì· «·«„";
+            this.gridColumn43.FieldName = "waleaalkamr_mobile2";
+            this.gridColumn43.Name = "gridColumn43";
+            this.gridColumn43.Visible = true;
+            this.gridColumn43.VisibleIndex = 5;
+            // 
+            // addMobile2ToolStripMenuItem
+            // 
+            this.addMobile2ToolStripMenuItem.Name = "addMobile2ToolStripMenuItem";
+            this.addMobile2ToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.addMobile2ToolStripMenuItem.Text = "«÷«›… „Ê»Ì· «·«„";
+            this.addMobile2ToolStripMenuItem.Click += new System.EventHandler(this.addMobile2ToolStripMenuItem_Click);
+            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2434,6 +2555,12 @@ namespace ATCommands
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn37;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn38;
         private DevExpress.XtraNavBar.NavBarItem navBarItemQry;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn39;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn40;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn41;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn42;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn43;
+        private System.Windows.Forms.ToolStripMenuItem addMobile2ToolStripMenuItem;
 
     }
 }

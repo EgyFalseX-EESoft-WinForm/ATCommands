@@ -293,7 +293,9 @@ namespace ATCommands
             DataTable dt = MyCL.LoadDataTable(@"SELECT stu_code, alsofof_code, fasl_code, ' ' AS alsofof_code_Name, ' ' AS fasl_code_Name,
             (Select stu_name From student Where stu_code = student_t.stu_code) AS stu_name,
             (Select walealkmrname From student Where stu_code = student_t.stu_code) AS walealkmrname,
-            (Select waleaalkamr_mobile From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile,'0' AS Dayz, '' AS BirthDay, '0' AS age,
+            (Select waleaalkamr_mobile From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile,
+            (Select waleaalkamr_mobile2 From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile2,
+            '0' AS Dayz, '' AS BirthDay, '0' AS age,
             'False' AS checked FROM student_t WHERE (asase_code = (SELECT MAX(asase_code) FROM student_t))", MyCL.SchoolDBPath);
             Fixe_schoolDBTable(ref dt);
             return dt;
@@ -317,7 +319,9 @@ namespace ATCommands
             DataTable dt = MyCL.LoadDataTable(@"SELECT stu_code, alsofof_code, fasl_code, ' ' AS alsofof_code_Name, ' ' AS fasl_code_Name,
             (Select stu_name From student Where stu_code = student_t.stu_code) AS stu_name,
             (Select walealkmrname From student Where stu_code = student_t.stu_code) AS walealkmrname,
-            (Select waleaalkamr_mobile From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile,'0' AS Dayz, '' AS BirthDay, '0' AS age,
+            (Select waleaalkamr_mobile From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile,
+            (Select waleaalkamr_mobile2 From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile2
+            ,'0' AS Dayz, '' AS BirthDay, '0' AS age,
             'False' AS checked FROM student_t WHERE (asase_code = (SELECT MAX(asase_code) FROM student_t))", MyCL.SchoolDBPath);
             for (int i = dt.Rows.Count - 1; i >= 0; i--)
             {
@@ -350,6 +354,7 @@ namespace ATCommands
             (Select stu_name From student Where stu_code = student_t.stu_code) AS stu_name,
             (Select walealkmrname From student Where stu_code = student_t.stu_code) AS walealkmrname,
             (Select waleaalkamr_mobile From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile,
+            (Select waleaalkamr_mobile2 From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile2,
             (Select Parthday From student Where stu_code = student_t.stu_code) AS BirthDay,
             (Select DateDiff('yyyy',Parthday,Date()) AS age From student Where stu_code = student_t.stu_code) AS age,'0' AS Dayz,
             'False' AS checked FROM student_t WHERE (asase_code = (SELECT MAX(asase_code) FROM student_t)) And ((Select Format(Parthday , 'dd') From student Where stu_code = student_t.stu_code) = {0})
@@ -379,6 +384,7 @@ namespace ATCommands
             (Select stu_name From student Where stu_code = student_t.stu_code) AS stu_name,
             (Select walealkmrname From student Where stu_code = student_t.stu_code) AS walealkmrname,
             (Select waleaalkamr_mobile From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile,
+            (Select waleaalkamr_mobile2 From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile2,
             (Select Count(*) From stu_eyab Where stu_code = student_t.stu_code AND asase_code = (SELECT MAX(asase_code) FROM student_t)) AS Dayz,'' AS BirthDay, '0' AS age,
             'False' AS checked FROM student_t WHERE asase_code = (SELECT MAX(asase_code) FROM student_t)", MyCL.SchoolDBPath);
 
@@ -402,7 +408,7 @@ namespace ATCommands
             WHERE (((stu_eyab.asase_code)=(select max(student_t.asase_code) from student_t )))
             GROUP BY student.stu_code, student.stu_name, student.walealkmrname, student.waleaalkamr_mobile, stu_eyab.eyab_date_from;
             */
-            DataTable dt = MyCL.LoadDataTable(@"SELECT student.stu_code, student.stu_name, student.walealkmrname, student.waleaalkamr_mobile, stu_eyab.eyab_date_from,
+            DataTable dt = MyCL.LoadDataTable(@"SELECT student.stu_code, student.stu_name, student.walealkmrname, student.waleaalkamr_mobile, student.waleaalkamr_mobile2, stu_eyab.eyab_date_from,
             (Select alsofof_code From student_t Where stu_code = student.stu_code And asase_code = (SELECT MAX(asase_code) FROM student_t)) AS alsofof_code,
             (Select fasl_code From student_t Where stu_code = student.stu_code And asase_code = (SELECT MAX(asase_code) FROM student_t)) AS fasl_code,
             ' ' AS alsofof_code_Name, ' ' AS fasl_code_Name, '0' AS Dayz,'' AS BirthDay, '0' AS age, 'False' AS checked
@@ -419,7 +425,7 @@ namespace ATCommands
                 MyCL.ShowMsg("Œÿ«¡ ›Ì „”«— ﬁ«⁄œÂ »Ì«‰«  «·‰ «∆Ã", true, this, true);
                 return new DataTable();
             }
-            DataTable dt = MyCL.LoadDataTable(@"SELECT asase_code, manth_code, stu_code, alsofof_code, fasl_code, stu_name, sumd, mobil, Format(perm, 'True/False') AS perm,
+            DataTable dt = MyCL.LoadDataTable(@"SELECT asase_code, manth_code, stu_code, alsofof_code, fasl_code, stu_name, sumd, mobil, mobil2, Format(perm, 'True/False') AS perm,
             ' ' AS alsofof_code_Name, ' ' AS fasl_code_Name, ' ' AS manth_code_Name, 'False' AS checked 
             FROM smscontrol Where asase_code = (Select Max(asase_code) From smscontrol)", MyCL.DatanetDBPath);
             Fixe_schoolDBTable(ref dt);
@@ -434,7 +440,7 @@ namespace ATCommands
                 MyCL.ShowMsg("Œÿ«¡ ›Ì „”«— ﬁ«⁄œÂ »Ì«‰«  «·Õ”«»« ", true, this, true);
                 return new DataTable();
             }
-            DataTable dt = MyCL.LoadDataTable(@"SELECT asase_code, stu_code, alsofof_code,' ' AS fasl_code, stu_name, sumbaky AS summony, mobil, 'False' AS checked,
+            DataTable dt = MyCL.LoadDataTable(@"SELECT asase_code, stu_code, alsofof_code,' ' AS fasl_code, stu_name, sumbaky AS summony, mobil, mobil2, 'False' AS checked,
             ' ' AS alsofof_code_Name, ' ' AS fasl_code_Name
             FROM smsaccount Where asase_code = (Select Max(asase_code) From smsaccount)", MyCL.acc_smsDBPath);
             // DataTable dt = MyCL.LoadDataTable(@"SELECT asase_code, stu_code, alsofof_code, fasl_code, stu_name, summony, mobil, 'False' AS checked,
@@ -451,7 +457,7 @@ namespace ATCommands
                 MyCL.ShowMsg("Œÿ«¡ ›Ì „”«— ﬁ«⁄œÂ »Ì«‰«  «·⁄«„·Ì‰", true, this, true);
                 return new DataTable();
             }
-            DataTable dt = MyCL.LoadDataTable(@"SELECT empId, empname, job, mada, mobil, 'False' AS checked
+            DataTable dt = MyCL.LoadDataTable(@"SELECT empId, empname, job, mada, mobil, mobil2, 'False' AS checked
             FROM smsemp", MyCL.malafatSmsDBPath);
             return dt;
         }
@@ -1410,7 +1416,6 @@ namespace ATCommands
         }
         private void toolStripMenuItemAdd_Click(object sender, EventArgs e)
         {
-            
             switch (gridControlMain.MainView.Name)
             {
                 case "gridViewdataschool":
@@ -1454,6 +1459,58 @@ namespace ATCommands
                         {
                             if (!PhoneInList(row["mobil"].ToString()))
                                 AddToPhonesList(row["mobil"].ToString(), row["empId"].ToString());
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+        private void addMobile2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            switch (gridControlMain.MainView.Name)
+            {
+                case "gridViewdataschool":
+                    for (int i = 0; i < gridViewdataschool.RowCount; i++)
+                    {
+                        DataRowView row = (DataRowView)gridViewdataschool.GetRow(gridViewdataschool.GetVisibleRowHandle(i));
+                        if (Convert.ToBoolean(row["checked"]))
+                        {
+                            if (!PhoneInList(row["waleaalkamr_mobile2"].ToString()))
+                                AddToPhonesList(row["waleaalkamr_mobile2"].ToString(), row["stu_code"].ToString());
+                        }
+                    }
+                    break;
+                case "gridViewDatanet":
+                    for (int i = 0; i < gridViewDatanet.RowCount; i++)
+                    {
+                        DataRowView row = (DataRowView)gridViewDatanet.GetRow(gridViewDatanet.GetVisibleRowHandle(i));
+                        if (Convert.ToBoolean(row["perm"]))
+                        {
+                            if (!PhoneInList(row["mobil2"].ToString()))
+                                AddToPhonesList(row["mobil2"].ToString(), row["stu_code"].ToString(), row["asase_code"].ToString(), row["manth_code"].ToString());
+                        }
+                    }
+                    break;
+                case "gridViewacc_sms":
+                    for (int i = 0; i < gridViewacc_sms.RowCount; i++)
+                    {
+                        DataRowView row = (DataRowView)gridViewacc_sms.GetRow(gridViewacc_sms.GetVisibleRowHandle(i));
+                        if (Convert.ToBoolean(row["checked"]))
+                        {
+                            if (!PhoneInList(row["mobil2"].ToString()))
+                                AddToPhonesList(row["mobil2"].ToString(), row["stu_code"].ToString(), asase: row["asase_code"].ToString());
+                        }
+                    }
+                    break;
+                case "gridViewmalafatSms":
+                    for (int i = 0; i < gridViewmalafatSms.RowCount; i++)
+                    {
+                        DataRowView row = (DataRowView)gridViewmalafatSms.GetRow(gridViewmalafatSms.GetVisibleRowHandle(i));
+                        if (Convert.ToBoolean(row["checked"]))
+                        {
+                            if (!PhoneInList(row["mobil2"].ToString()))
+                                AddToPhonesList(row["mobil2"].ToString(), row["empId"].ToString());
                         }
                     }
                     break;
@@ -1570,7 +1627,6 @@ namespace ATCommands
         }
         #endregion
 
-        
     
     }
 }
