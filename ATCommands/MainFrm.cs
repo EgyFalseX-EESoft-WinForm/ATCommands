@@ -592,7 +592,8 @@ namespace ATCommands
                         msg = msg.Replace("[«”„ «·„” Œœ„]", dt.Rows[0]["user_name"].ToString());
                     if (msg.Contains("[ﬂ·„… «·„—Ê—]"))
                         msg = msg.Replace("[ﬂ·„… «·„—Ê—]", dt.Rows[0]["pass"].ToString());
-                    
+                    //if (msg.Contains("[„»·€ «·Õ”«»« ]"))
+                    //    msg = msg.Replace("[„»·€ «·Õ”«»« ]", dt.Rows[0]["pass"].ToString());
                 }
                 else
                 {
