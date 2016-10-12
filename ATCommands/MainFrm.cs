@@ -413,7 +413,7 @@ namespace ATCommands
             (Select fasl_code From student_t Where stu_code = student.stu_code And asase_code = (SELECT MAX(asase_code) FROM student_t)) AS fasl_code,
             ' ' AS alsofof_code_Name, ' ' AS fasl_code_Name, '0' AS Dayz,'' AS BirthDay, '0' AS age, 'False' AS checked
             FROM student INNER JOIN stu_eyab ON student.stu_code = stu_eyab.stu_code WHERE (((stu_eyab.asase_code)=(select max(student_t.asase_code) from student_t )))
-            GROUP BY student.stu_code, student.stu_name, student.walealkmrname, student.waleaalkamr_mobile, stu_eyab.eyab_date_from", MyCL.SchoolDBPath);
+            GROUP BY student.stu_code, student.stu_name, student.walealkmrname, student.waleaalkamr_mobile, student.waleaalkamr_mobile2, stu_eyab.eyab_date_from", MyCL.SchoolDBPath);
             Fixe_schoolDBTable(ref dt);
             return dt;
         }
