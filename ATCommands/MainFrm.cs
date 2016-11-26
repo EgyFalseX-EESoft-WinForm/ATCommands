@@ -294,7 +294,7 @@ namespace ATCommands
             (Select stu_name From student Where stu_code = student_t.stu_code) AS stu_name,
             (Select walealkmrname From student Where stu_code = student_t.stu_code) AS walealkmrname,
             (Select waleaalkamr_mobile From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile,
-            (Select waleaalkamr_mobile2 From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile2,
+            (Select mother_mobile From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile2,
             '0' AS Dayz, '' AS BirthDay, '0' AS age,
             'False' AS checked FROM student_t WHERE (asase_code = (SELECT MAX(asase_code) FROM student_t))", MyCL.SchoolDBPath);
             Fixe_schoolDBTable(ref dt);
@@ -320,7 +320,7 @@ namespace ATCommands
             (Select stu_name From student Where stu_code = student_t.stu_code) AS stu_name,
             (Select walealkmrname From student Where stu_code = student_t.stu_code) AS walealkmrname,
             (Select waleaalkamr_mobile From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile,
-            (Select waleaalkamr_mobile2 From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile2
+            (Select mother_mobile From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile2
             ,'0' AS Dayz, '' AS BirthDay, '0' AS age,
             'False' AS checked FROM student_t WHERE (asase_code = (SELECT MAX(asase_code) FROM student_t))", MyCL.SchoolDBPath);
             for (int i = dt.Rows.Count - 1; i >= 0; i--)
@@ -354,7 +354,7 @@ namespace ATCommands
             (Select stu_name From student Where stu_code = student_t.stu_code) AS stu_name,
             (Select walealkmrname From student Where stu_code = student_t.stu_code) AS walealkmrname,
             (Select waleaalkamr_mobile From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile,
-            (Select waleaalkamr_mobile2 From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile2,
+            (Select mother_mobile From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile2,
             (Select Parthday From student Where stu_code = student_t.stu_code) AS BirthDay,
             (Select DateDiff('yyyy',Parthday,Date()) AS age From student Where stu_code = student_t.stu_code) AS age,'0' AS Dayz,
             'False' AS checked FROM student_t WHERE (asase_code = (SELECT MAX(asase_code) FROM student_t)) And ((Select Format(Parthday , 'dd') From student Where stu_code = student_t.stu_code) = {0})
@@ -384,7 +384,7 @@ namespace ATCommands
             (Select stu_name From student Where stu_code = student_t.stu_code) AS stu_name,
             (Select walealkmrname From student Where stu_code = student_t.stu_code) AS walealkmrname,
             (Select waleaalkamr_mobile From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile,
-            (Select waleaalkamr_mobile2 From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile2,
+            (Select mother_mobile From student Where stu_code = student_t.stu_code) AS waleaalkamr_mobile2,
             (Select Count(*) From stu_eyab Where stu_code = student_t.stu_code AND asase_code = (SELECT MAX(asase_code) FROM student_t)) AS Dayz,'' AS BirthDay, '0' AS age,
             'False' AS checked FROM student_t WHERE asase_code = (SELECT MAX(asase_code) FROM student_t)", MyCL.SchoolDBPath);
 
@@ -408,12 +408,12 @@ namespace ATCommands
             WHERE (((stu_eyab.asase_code)=(select max(student_t.asase_code) from student_t )))
             GROUP BY student.stu_code, student.stu_name, student.walealkmrname, student.waleaalkamr_mobile, stu_eyab.eyab_date_from;
             */
-            DataTable dt = MyCL.LoadDataTable(@"SELECT student.stu_code, student.stu_name, student.walealkmrname, student.waleaalkamr_mobile, student.waleaalkamr_mobile2, stu_eyab.eyab_date_from,
+            DataTable dt = MyCL.LoadDataTable(@"SELECT student.stu_code, student.stu_name, student.walealkmrname, student.waleaalkamr_mobile, student.mother_mobile AS waleaalkamr_mobile2, stu_eyab.eyab_date_from,
             (Select alsofof_code From student_t Where stu_code = student.stu_code And asase_code = (SELECT MAX(asase_code) FROM student_t)) AS alsofof_code,
             (Select fasl_code From student_t Where stu_code = student.stu_code And asase_code = (SELECT MAX(asase_code) FROM student_t)) AS fasl_code,
             ' ' AS alsofof_code_Name, ' ' AS fasl_code_Name, '0' AS Dayz,'' AS BirthDay, '0' AS age, 'False' AS checked
             FROM student INNER JOIN stu_eyab ON student.stu_code = stu_eyab.stu_code WHERE (((stu_eyab.asase_code)=(select max(student_t.asase_code) from student_t )))
-            GROUP BY student.stu_code, student.stu_name, student.walealkmrname, student.waleaalkamr_mobile, student.waleaalkamr_mobile2, stu_eyab.eyab_date_from", MyCL.SchoolDBPath);
+            GROUP BY student.stu_code, student.stu_name, student.walealkmrname, student.waleaalkamr_mobile, student.mother_mobile, stu_eyab.eyab_date_from", MyCL.SchoolDBPath);
             Fixe_schoolDBTable(ref dt);
             return dt;
         }
